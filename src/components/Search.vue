@@ -142,6 +142,7 @@
             this.searchHistory.splice(index, 1)
           }
           this.searchHistory.unshift(key)
+          this.searchHistory = this.searchHistory.slice(0,10)
           localStorage.searchHistory = JSON.stringify(this.searchHistory)
         })
       },
@@ -493,7 +494,8 @@
   }
 
   .page-slide-enter, .page-slide-leave-active {
-    margin-left: 100%;
+    /*margin-left: 100%;*/
+    transform: translateX(100%);
   }
 
 
